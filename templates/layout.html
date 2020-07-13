@@ -28,9 +28,9 @@
     <header>
         <div class="container">
 
-            <img src="{{url_for('static', filename='img/logo.png')}}" class="logo" alt="">
+            <img src="{{url_for('static', filename='img/logo1.png')}}" class="logo" alt="">
 
-            <form class="form-inline">
+            <!-- <form class="form-inline">
                 <div class="form-group">
                     <label class="sr-only" for="exampleInputEmail3">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
@@ -48,7 +48,7 @@
                 </div>
                 <div> <label>Don't have a Account Create One Now..   </label><a href="{{ url_for('register') }}" class="btn btn-default" role="button" aria-pressed="true">Register-Now</a>
                 </div>
-            </form>
+            </form> -->
         </div>
     </header>
 
@@ -63,6 +63,7 @@
           </button>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
+
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('members') }}">Members</a></li>
@@ -76,15 +77,11 @@
         </div>
     </nav>
     <!--Navbar ends-->
-
-
-
-
-
-
-
-
-    {% block content %}{% endblock %}
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}" style="text-align: center;">
+        {{ message }}
+    </div>
+    {% endfor %} {% endif %} {% endwith %} {% block content %} {% endblock %}
 
 
 
@@ -92,7 +89,7 @@
 
     <footer>
         <div class="container">
-            <p>Dobble Copyright &copy, 2015</p>
+            <p>Flask Social Copyright &copy, 2020</p>
         </div>
     </footer>
 

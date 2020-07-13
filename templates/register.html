@@ -3,25 +3,107 @@
     <div class="container">
         <div class="row">
             <div class="container">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" method="POST" role="form">
+                    {{ form.hidden_tag() }}
                     <h2 style="text-align: center;">Registration</h2>
+                    {% if form.username.errors %}
                     <div class="form-group">
-                        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.username.label(class="col-sm-3 control-label") }}
                         <div class="col-sm-9">
-                            <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required>
+                            {{ form.username(class="form-control") }} {% for error in form.username.errors %}
+                            <span class="help-block" style="color: red;">{{ error }} </span> {% endfor %}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
                         </div>
                     </div>
+                    {% else %}
                     <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.username.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.username(class="form-control") }}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% endif %} {% if form.email.errors %}
+                    <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.email.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.email(class="form-control") }} {% for error in form.email.errors %}
+                            <span class="help-block" style="color: red;">{{ error }} </span> {% endfor %}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.email.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.email(class="form-control") }}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% endif %} {% if form.password.errors %}
+                    <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.password.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.password(class="form-control") }} {% for error in form.password.errors %}
+                            <span class="help-block" style="color: red;">{{ error }} </span> {% endfor %}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.password.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.password(class="form-control") }}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% endif %} {% if form.confirm_password.errors %}
+                    <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.confirm_password.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.confirm_password(class="form-control") }} {% for error in form.confirm_password.errors %}
+                            <span class="help-block" style="color: red;">{{ error }} </span> {% endfor %}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="form-group">
+                        <!-- <label for="firstName" class="col-sm-3 control-label">First Name</label> -->
+                        {{ form.confirm_password.label(class="col-sm-3 control-label") }}
+                        <div class="col-sm-9">
+                            {{ form.confirm_password(class="form-control") }}
+                            <!-- <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required> -->
+                        </div>
+                    </div>
+                    {% endif %}
+
+
+
+
+
+
+
+
+
+                    <!-- <div class=""></div> -->
+                    <!-- <div class="form-group">
                         <label for="lastName" class="col-sm-3 control-label">Last Name</label>
                         <div class="col-sm-9">
                             <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus required>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    </div> -->
+                    <!-- <div class="form-group">
                         <label for="email" class="col-sm-3 control-label">Email* </label>
                         <div class="col-sm-9">
                             <input type="email" id="email" placeholder="Email" class="form-control" name="email" required>
-                            <span class="help-block">Varification Required </span>
+                            <span class="help-block">Varification Required  </span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -35,20 +117,20 @@
                         <div class="col-sm-9">
                             <input type="password" id="password" placeholder="Password" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    </div> -->
+                    <!-- <div class="form-group">
                         <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
                         <div class="col-sm-9">
                             <input type="date" id="birthDate" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="form-group">
+                    </div> -->
+                    <!-- <div class="form-group">
                         <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
                         <div class="col-sm-9">
                             <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control" required>
                             <span class="help-block">Your phone number won't be disclosed anywhere </span>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -56,7 +138,7 @@
 
 
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="control-label col-sm-3">Gender</label>
 
                         <div class="col-sm-6">
@@ -66,25 +148,34 @@
                             </div>
 
                             <!-- Material checked -->
-                            <div class="form-check">
+                    <!-- <div class="form-check">
                                 <input type="radio" class="form-check-input" id="materialChecked" name="materialExampleRadios" checked>
                                 <label class="form-check-label" for="materialChecked">Female</label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
             </div>
             <!-- /.form-group -->
             <div class="form-group">
                 <div class="col-sm-9 col-sm-offset-3">
-                    <span class="help-block">*Required fields</span>
+                    {{ form.submit(class="btn btn-primary btn-block") }}
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <legend style="text-align: center;">"Already have an account yet?"<a class="btn btn-primary btn-block" href="{{ url_for('login') }}">Login Now</a></legend>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+
+            <!-- <button type="submit" class="btn btn-primary btn-block">Register</button> -->
             </form>
             <!-- /form -->
         </div>
+
         <!-- ./container -->
 
 
